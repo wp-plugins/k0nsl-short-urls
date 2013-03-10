@@ -23,7 +23,7 @@ The plugin currently use knsl.net as the only service and stores the data in the
 
 = 0.2 =
 
-* Added function k0nsl_show_url(); for placement in template files, i.e k0nsl_show_url(); will echo "http://knsl.net/453" for your long URL in the permalink of your post.
+* Added function k0nsl_show_url(); for placement in template files, i.e k0nsl_show_url(); will result in "http://knsl.net/453" when echoed.
 
 = 0.1 =
 
@@ -31,7 +31,8 @@ The plugin currently use knsl.net as the only service and stores the data in the
 
 == Frequently Asked Questions ==
 
-No questions yet.
+= How do I use the k0nsl_show_url() function? =
+This function can be used in your theme files. For example, we put <p><?php echo k0nsl_show_url(); ?></p> in post.php and this will show "http://knsl.net/453".
 
 == Screenshots ==
 
