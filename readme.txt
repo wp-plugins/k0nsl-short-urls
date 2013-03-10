@@ -1,5 +1,6 @@
 === k0nsl Short URLs ===
 Contributors: k0nsl, GentleSource
+Donate link: http://k0nsl.org/blog/
 Tags: short url, short, url, shortener, url shortener, url shortening, urls, links, tinyurl, twitter, microblogging, k0nsl
 Requires at least: 2.5
 Tested up to: 3.6
@@ -46,9 +47,8 @@ This function can be used in your theme files. For example, we echo k0nsl_show_u
 
 == Screenshots ==
 
-1. Short URL settings page
-
-== Screenshots ==
-
 1. k0nsl Short URL settings page
 2. k0nsl_show_url() in action.
+
+== Upgrade Notice ==
+None.

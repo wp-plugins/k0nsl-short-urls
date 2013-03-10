@@ -2,7 +2,7 @@
 /*
 Plugin Name: k0nsl Short URLs
 Plugin URI: http://k0nsl.org/blog/k0nsl-short-urls-plugin/
-Description: Automatically shortens the blog post URL via knsl.net.
+Description: Automatically shortens the blog post URL via knsl.net
 Version: 0.2
 Author: k0nsl
 Author URI: http://k0nsl.org/blog/
@@ -11,7 +11,7 @@ Author URI: http://k0nsl.org/blog/
 define('DEFAULT_API_URL', 'http://knsl.net/api.php?url=%s');
 define( 'k0nsl_plugin_path', plugin_dir_path(__FILE__) );
 
-/* returns a result form url */
+/* returns a result from url */
 function curl_get_url($url) {
   $ch = curl_init();
   $timeout = 5;
@@ -27,7 +27,7 @@ function get_k0nsl_url($url,$format='txt') {
   $connectURL = 'http://knsl.net/api.php?url='.$url;
   return curl_get_url($connectURL);
 }
-
+/* use with echo statement */
 function k0nsl_show_url($showurl) {
 	$url_create = get_k0nsl_url(get_permalink( $id ));
 
