@@ -180,13 +180,13 @@ class k0nsl_Short_URL
     }
 }
 
-$gssu = new k0nsl_Short_URL;
+$knsl = new k0nsl_Short_URL;
 
 if (is_admin()) {
-    add_action('edit_post', array(&$gssu, 'create'));
-    add_action('save_post', array(&$gssu, 'create'));
-    add_action('publish_post', array(&$gssu, 'create'));
-    add_action('admin_menu', array(&$gssu, 'admin_menu'));
+    add_action('edit_post', array(&$knsl, 'create'));
+    add_action('save_post', array(&$knsl, 'create'));
+    add_action('publish_post', array(&$knsl, 'create'));
+    add_action('admin_menu', array(&$knsl, 'admin_menu'));
 } else {
-    add_filter('the_content', array(&$gssu, 'display'));
+    add_filter('the_content', array(&$knsl, 'display'));
 }

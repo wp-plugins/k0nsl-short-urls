@@ -51,4 +51,4 @@ This function can be used in your theme files. For example, we echo k0nsl_show_u
 2. k0nsl_show_url() in action.
 
 == Upgrade Notice ==
-None.
+= None. =
