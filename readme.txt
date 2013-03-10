@@ -47,3 +47,7 @@ This function can be used in your theme files. For example, we echo k0nsl_show_u
 == Screenshots ==
 
 1. Short URL settings page
+
+== Screenshots ==
+
+1. k0nsl Short URL settings page
