@@ -1,8 +1,10 @@
 === k0nsl Short URLs ===
-Contributors: k0nsl
+Contributors: k0nsl, GentleSource
 Tags: short url, short, url, shortener, url shortener, url shortening, urls, links, tinyurl, twitter, microblogging, k0nsl
 Requires at least: 2.5
 Tested up to: 3.6
+Stable tag: trunk
+License: GPLv3
 
 Automatically shortens the blog post URL via knsl.net.
 
@@ -10,8 +12,16 @@ Automatically shortens the blog post URL via knsl.net.
 
 This plugin creates a short URL from the blog post permalink and stores it
 in the database. The URL is displayed below the blog post along with a link
-to twitter that passes the short URL on.
-The plugin currently use knsl.net as the only service and stores the data in the database of knsl.net
+to twitter that passes the short URL on, if defined in the settings page.
+The plugin currently use knsl.net as the only service and stores the data in the database of knsl.net.
+
+Plugin homepage:
+http://k0nsl.org/blog/k0nsl-short-urls-plugin/
+
+For support use WordPress.org or devNET community forums:
+http://devnet-software.org/
+
+Thanks!
 
 == Installation ==
 
