@@ -44,10 +44,15 @@ class k0nsl_Short_URL
     {
         return array(
             array(
+                'name' => '',
+                'url'  => '',
+                ),
+            array(
                 'name' => 'knsl.net',
                 'url'  => 'http://knsl.net/api.php?url=%s',
                 ),
             );
+    }
     }
 
     /**
