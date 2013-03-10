@@ -42,7 +42,7 @@ Thanks!
 == Frequently Asked Questions ==
 
 = How do I use the k0nsl_show_url() function? =
-This function can be used in your theme files. For example, we put <p><?php echo k0nsl_show_url(); ?></p> in post.php and this will show "http://knsl.net/453".
+This function can be used in your theme files. For example, we echo k0nsl_show_url() in post.php and this will show "http://knsl.net/453".
 
 == Screenshots ==
 
