@@ -3,7 +3,6 @@
 
 <table class="form-table">
 
-
   <tr valign="top">
     <th scope="row">
         <label for="ApiUrl" style="font-weight:bold;"><?php echo __('Short URL Service API URL') ?></label><br />

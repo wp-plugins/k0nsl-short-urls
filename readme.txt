@@ -1,10 +1,10 @@
 === k0nsl Short URLs ===
-Contributors: GentleSource (and k0nsl)
+Contributors: k0nsl
 Tags: short url, short, url, shortener, url shortener, url shortening, urls, links, tinyurl, twitter, microblogging, k0nsl
 Requires at least: 2.5
 Tested up to: 3.6
 
-Automatically shortens the blog post URL via knsl.net
+Automatically shortens the blog post URL via knsl.net.
 
 == Description ==
 
@@ -20,6 +20,10 @@ The plugin currently use knsl.net as the only service and stores the data in the
 3. You can change the default short URL service in 'Settings' -> 'Short URLs'
 
 == Changelog ==
+
+= 0.2 =
+
+* Added function k0nsl_show_url(); for placement in template files, i.e k0nsl_show_url(); will echo "http://knsl.net/453" for your long URL in the permalink of your post.
 
 = 0.1 =
 
