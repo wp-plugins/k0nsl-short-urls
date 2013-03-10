@@ -51,3 +51,4 @@ This function can be used in your theme files. For example, we echo k0nsl_show_u
 == Screenshots ==
 
 1. k0nsl Short URL settings page
+2. k0nsl_show_url() in action.
