@@ -53,7 +53,6 @@ class k0nsl_Short_URL
                 ),
             );
     }
-    }
 
     /**
      * Create short URL based on post URL
