@@ -35,6 +35,18 @@ function k0nsl_show_url($showurl) {
 	return $kshort;
 }
 
+function k0nsl_shortcode_handler( $atts, $text = null, $code = "" ) {	
+	extract( shortcode_atts( array( 'u' => null ), $atts ) );
+	
+	$url = get_k0nsl_url( $u );
+	
+	if( !$text )
+		return $url;
+	
+	return '<a href="' .$url. '">' .$text. '</a>';
+}
+add_shortcode('knsl-url', 'k0nsl_shortcode_handler');
+
 class k0nsl_Short_URL
 {
     const META_FIELD_NAME='Shorter link';	

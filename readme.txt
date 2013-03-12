@@ -35,6 +35,7 @@ Thanks!
 = 0.3a =
 
 * Addd pre_get_shortlink(); and did some minor cleanups. Thanks to Rob Allen for code contributions.
+* Shortcode added, usage: [knsl-url u=http://wordpress.stackexchange.com]WordPress Answers - Stack Exchange[/knsl-url]
 
 = 0.2 =
 
