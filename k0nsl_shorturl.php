@@ -3,7 +3,7 @@
 Plugin Name: k0nsl Short URLs
 Plugin URI: http://k0nsl.org/blog/k0nsl-short-urls-plugin/
 Description: Automatically shortens the blog post URL via knsl.net
-Version: 0.2
+Version: 0.3a
 Author: k0nsl
 Author URI: http://k0nsl.org/blog/
 */
@@ -31,12 +31,14 @@ function get_k0nsl_url($url,$format='txt') {
 function k0nsl_show_url($showurl) {
 	$url_create = get_k0nsl_url(get_permalink( $id ));
 
-   $showtinyurl .= '<a href="'.$url_create.'" target="_blank">'.$url_create.'</a>';
-	return $showtinyurl;
+   $kshort .= '<a href="'.$url_create.'" target="_blank">'.$url_create.'</a>';
+	return $kshort;
 }
 
 class k0nsl_Short_URL
 {
+    const META_FIELD_NAME='Shorter link';	
+	
     /**
      * List of short URL website API URLs (only knsl.net for now)
      */
@@ -178,6 +180,32 @@ class k0nsl_Short_URL
 
         return $content;
     }
+
+    public function pre_get_shortlink($false, $id, $context=null, $allow_slugs=null) /* Thanks to Rob Allen */
+    {
+        // get the post id
+        global $wp_query;
+        if ($id == 0) {
+            $post_id = $wp_query->get_queried_object_id();
+        } else {
+            $post = get_post($id);
+            $post_id = $post->ID;
+        }
+
+        $short_link = get_post_meta($post_id, self::META_FIELD_NAME, true);
+        if('' == $short_link) {
+            $short_link = $post_id;
+        }
+
+        $url = get_k0nsl_url(get_permalink( $id ));
+        if (!empty($url)) {
+            $short_link = $url;
+        } else {
+            $short_link = home_url($short_link);
+        }
+        return $short_link;
+    }
+
 }
 
 $knsl = new k0nsl_Short_URL;
@@ -187,6 +215,7 @@ if (is_admin()) {
     add_action('save_post', array(&$knsl, 'create'));
     add_action('publish_post', array(&$knsl, 'create'));
     add_action('admin_menu', array(&$knsl, 'admin_menu'));
+    add_filter('pre_get_shortlink',  array(&$knsl, 'pre_get_shortlink'), 10, 4);
 } else {
     add_filter('the_content', array(&$knsl, 'display'));
 }
