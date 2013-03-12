@@ -2,7 +2,7 @@
 Contributors: k0nsl, GentleSource
 Donate link: http://k0nsl.org/blog/
 Tags: short url, short, url, shortener, url shortener, url shortening, urls, links, tinyurl, twitter, microblogging, k0nsl
-Requires at least: 2.5
+Requires at least: 3.0
 Tested up to: 3.6
 Stable tag: trunk
 License: GPLv3
@@ -31,6 +31,10 @@ Thanks!
 3. You can change the default short URL service in 'Settings' -> 'Short URLs'
 
 == Changelog ==
+
+= 0.3a =
+
+* Addd pre_get_shortlink(); and did some minor cleanups. Thanks to Rob Allen for code contributions.
 
 = 0.2 =
 
