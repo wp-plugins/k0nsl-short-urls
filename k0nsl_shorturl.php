@@ -52,8 +52,8 @@ function k0nsl_shortcode_handler( $atts, $text = null, $code = "" ) {
 	
 	return '<a href="' .$url. '">' .$text. '</a>';
 }
-add_shortcode('knsl-url', 'k0nsl_shortcode_handler');
 }
+add_shortcode('knsl-url', 'k0nsl_shortcode_handler');
 
 class k0nsl_Short_URL
 {
