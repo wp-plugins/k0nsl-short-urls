@@ -13,36 +13,36 @@ define( 'k0nsl_plugin_path', plugin_dir_path(__FILE__) );
 
 /* returns a result from url */
 if ( ! function_exists( 'curl_get_url' ) ){
-function curl_get_url($url) {
-  $ch = curl_init();
-  $timeout = 5;
-  curl_setopt($ch,CURLOPT_URL,$url);
-  curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
-  curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,$timeout);
-  $data = curl_exec($ch);
-  curl_close($ch);
-  return $data;
-}
+  function curl_get_url($url) {
+    $ch = curl_init();
+    $timeout = 5;
+    curl_setopt($ch,CURLOPT_URL,$url);
+    curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+    curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,$timeout);
+    $data = curl_exec($ch);
+    curl_close($ch);
+    return $data;
+ }
 }
 
 if ( ! function_exists( 'get_k0nsl_url' ) ){ /* what's the odds of that? */
-function get_k0nsl_url($url,$format='txt') {
-  $connectURL = 'http://knsl.net/api.php?url='.$url;
-  return curl_get_url($connectURL);
-}
+ function get_k0nsl_url($url,$format='txt') {
+   $connectURL = 'http://knsl.net/api.php?url='.$url;
+   return curl_get_url($connectURL);
+ }
 }
 
 if ( ! function_exists( 'k0nsl_show_url' ) ){
-function k0nsl_show_url($showurl) { /* use with echo statement */
-	$url_create = get_k0nsl_url(get_permalink( $id ));
+ function k0nsl_show_url($showurl) { /* use with echo statement */
+  $url_create = get_k0nsl_url(get_permalink( $id ));
 
-   $kshort .= '<a href="'.$url_create.'" target="_blank">'.$url_create.'</a>';
-	return $kshort;
-}
+  $kshort .= '<a href="'.$url_create.'" target="_blank">'.$url_create.'</a>';
+  return $kshort;
+ }
 }
 
 if ( ! function_exists( 'k0nsl_shortcode_handler' ) ){
-function k0nsl_shortcode_handler( $atts, $text = null, $code = "" ) {	
+ function k0nsl_shortcode_handler( $atts, $text = null, $code = "" ) {	
 	extract( shortcode_atts( array( 'u' => null ), $atts ) );
 	
 	$url = get_k0nsl_url( $u );
@@ -51,7 +51,7 @@ function k0nsl_shortcode_handler( $atts, $text = null, $code = "" ) {
 		return $url;
 	
 	return '<a href="' .$url. '">' .$text. '</a>';
-}
+ }
 }
 add_shortcode('knsl-url', 'k0nsl_shortcode_handler');
 
